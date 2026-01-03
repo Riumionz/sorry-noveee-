@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>For Nove My Love 🤍</title>
+
+<!-- Aesthetic Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #ffc0d9, #ffe6f0);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+    }
+
+    .float {
+        position: fixed;
+        animation: floatUp 8s linear infinite;
+        opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+        from { transform: translateY(110vh); }
+        to { transform: translateY(-10vh); }
+    }
+
+    .card {
+        background: #ffffff;
+        max-width: 420px;
+        padding: 26px;
+        margin: 20px;
+        border-radius: 26px;
+        text-align: center;
+        box-shadow: 0 25px 50px rgba(255, 105, 180, 0.35);
+    }
+
+    h1 {
+        font-family: 'Playfair Display', serif;
+        color: #ff5fa2;
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+
+    .hint {
+        font-size: 13px;
+        color: #777;
+        margin-bottom: 12px;
+    }
+
+    p {
+        font-size: 14px;
+        color: #444;
+        line-height: 1.9;
+        margin-top: 18px;
+    }
+
+    .buttons {
+        margin-top: 28px;
+    }
+
+    button {
+        border: none;
+        border-radius: 50px;
+        padding: 12px 26px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: all 0.4s ease;
+    }
+
+    #no {
+        background: #ddd;
+        color: #555;
+        margin-right: 10px;
+    }
+
+    #yes {
+        background: #ff5fa2;
+        color: white;
+    }
+
+    iframe {
+        margin-top: 12px;
+        border-radius: 16px;
+    }
+</style>
+</head>
+
+<body>
+
+<script>
+    const icons = ["💖","💕","✨","🌸","💗"];
+    for(let i=0;i<22;i++){
+        let f = document.createElement("div");
+        f.className = "float";
+        f.innerHTML = icons[Math.floor(Math.random()*icons.length)];
+        f.style.left = Math.random()*100 + "vw";
+        f.style.fontSize = (Math.random()*10 + 14) + "px";
+        f.style.animationDuration = (Math.random()*4 + 6) + "s";
+        document.body.appendChild(f);
+    }
+</script>
+
+<div class="card" id="card">
+
+    <h1>Hai Nove 🤍</h1>
+    <div class="hint">🎧 tap play dulu ya…</div>
+
+    <!-- Spark - Coldplay (BENAR) -->
+    <iframe
+      src="https://open.spotify.com/embed/track/7D0RhFcb3CrfPuTJ0obrod?utm_source=oembed"
+      width="100%"
+      height="152"
+      frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
+
+    <p>
+    Maafin aku ya, Nov.  
+    Aku sadar aku masih sering salah dan masih belajar jadi lebih dewasa.
+    <br><br>
+    Kadang egoku tinggi, pikiranku ribut sendiri,
+    dan tanpa sadar itu bikin kau capek,
+    stres, bahkan sedih.
+    <br><br>
+    Awal tahun harusnya jadi waktu yang bahagia,
+    tapi karena aku,
+    kau malah ngerasain hal yang sebaliknya.
+    Itu nyesek banget buat aku.
+    <br><br>
+    I have trauma, trust issues,
+    and I overthink too much,
+    but those will never be an excuse to hurt you.
+    <br><br>
+    If time could be repeated,
+    the only thing I want to change
+    is the way I treated you.
+    <br><br>
+    I really, really love you, Nov.
+    I don’t want to lose you.
+    I just want you to be my last love.
+    <br><br>
+    Pesan ini aku tulis jujur,
+    pure dari pikiran dan hatiku.
+    </p>
+
+    <div class="buttons">
+        <button id="no" onclick="nolove()">Ga maafin</button>
+        <button id="yes" onclick="yeslove()">Maafin 🤍</button>
+    </div>
+
+</div>
+
+<script>
+    let size = 15;
+
+    function nolove(){
+        document.getElementById("no").style.display = "none";
+        const yes = document.getElementById("yes");
+
+        let grow = setInterval(() => {
+            size += 1.6;
+            yes.style.fontSize = size + "px";
+            yes.style.padding = "18px 38px";
+            if(size >= 44){
+                clearInterval(grow);
+            }
+        }, 45);
+    }
+
+    function yeslove(){
+        document.getElementById("card").innerHTML = `
+        <h1>Makasih ya, Nov 🤍</h1>
+        <p>
+        Makasih udah mau maafin aku.
+        <br><br>
+        Aku tau aku belum sempurna,
+        tapi aku beneran mau belajar,
+        mau berubah,
+        dan mau jadi lebih baik buat kau , nanti kalau udah ga sedih jangan cuek cuek lagi yaaa sayangggg 🤍 .
+        <br><br>
+        I love you so much.
+        <br><br>
+        ~ Ari
+        </p>
+        `;
+    }
+</script>
+
+</body>
+</html>
